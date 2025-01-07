@@ -134,6 +134,10 @@ class MoviesAdapter(mContext: Context, mParents: List<Movies>,layout:Int) :
                     .transform(RoundedCorners(15))
                     .placeholder(R.drawable.placeholder).into(viewHolder.ivImage);
 
+            }else{
+                Glide.with(context).load(model.Poster).diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .transform(RoundedCorners(15))
+                    .placeholder(R.drawable.placeholder).into(viewHolder.ivImage)
             }
 
             //val url = model.Poster.replace(/^http:\/\//i, 'https://');

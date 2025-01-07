@@ -30,7 +30,7 @@
 
         app:layout_constraintTop_toTopOf="@+id/ivParent"
         app:layout_constraintBottom_toBottomOf="@+id/ivParent"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/ivParent"
         android:textStyle="bold"
         android:textSize="14sp"

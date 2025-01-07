@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/vodHome"
+        android:icon="@drawable/ic_home_new"
+        android:iconTint="@color/white"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/liveTv"
+        android:icon="@drawable/ic_livetv_new"
+        android:title="Live TV" />
+
+    <item
+        android:id="@+id/radio"
+        android:icon="@drawable/ic_radio_new"
+        android:title="Radio" />
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_profile_new"
+        android:title="Profile" />
+
+</menu>

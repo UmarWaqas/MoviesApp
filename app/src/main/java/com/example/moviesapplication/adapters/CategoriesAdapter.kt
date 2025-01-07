@@ -87,7 +87,7 @@ class CategoriesAdapter(mContext:Context, dataList:List<MovieCategory>) :
                     val mAdapter =
                         MoviesAdapter(
                             context,
-                            category.movieList,id
+                            category.movieList.subList(0,10),id
                         )
                     viewHolder!!.rvMovies.adapter = mAdapter
                     viewHolder.rvMovies.setHasFixedSize(true)
