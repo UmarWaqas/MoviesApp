@@ -5,17 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    tools:context=".views.activities.MainActivity">
+    android:background="@drawable/app_background"
+    tools:context=".views.activities.MainActivity"
+    >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCategories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:paddingBottom="16dp"
+        android:paddingBottom="@dimen/_50sdp"
+
         />
 
 

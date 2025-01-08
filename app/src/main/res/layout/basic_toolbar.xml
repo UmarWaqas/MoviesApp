@@ -21,8 +21,41 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_16sdp"
-        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
         android:src="@drawable/watcho_logo" />
+
+
+    <ImageView
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_search"
+        android:id="@+id/ivSearch"
+        android:tint="@color/light_grey"
+        android:layout_marginEnd="@dimen/_10sdp"/>
+
+
+    <ImageView
+        android:layout_width="@dimen/_16sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_bell_home"
+        android:layout_toLeftOf="@+id/ivSearch"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:tint="@color/light_grey"
+        android:id="@+id/ivNotification"/>
+
+
+    <ImageView
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_language_acc"
+        android:layout_toLeftOf="@+id/ivNotification"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:tint="@color/light_grey"
+        android:id="@+id/ivLang"/>
 
 
 </RelativeLayout>

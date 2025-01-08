@@ -117,7 +117,7 @@ class MoviesAdapter(mContext: Context, mParents: List<Movies>,layout:Int) :
     }
 
     private fun bindMultiViews(holder: RecyclerView.ViewHolder?, position: Int, type: Int =0) {
-        Collections.shuffle(this.mParents)
+     //   Collections.shuffle(this.mParents)
         val model: Movies = mParents.get(position)
         val viewHolder = holder as ViewHolder?
         var url:String? =null

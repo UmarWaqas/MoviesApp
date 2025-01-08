@@ -20,16 +20,25 @@ class HomeFragment : Fragment() {
         val adapter = ViewPagerAdapter(childFragmentManager)
 
         // add fragment to the list
-        adapter.addFragment(GeeksFragment(), "GeeksForGeeks")
-        adapter.addFragment(TempFragment(), "Code Chef")
-        adapter.addFragment(GeeksFragment(), "GeeksForGeeks")
-        adapter.addFragment(TempFragment(), "Cheat Code")
+        adapter.addFragment(ContentFragment(), "Home")
+        adapter.addFragment(TempFragment(), "Series")
+        adapter.addFragment(ContentFragment(), "Movies")
+        adapter.addFragment(TempFragment(), "bhakti")
+        adapter.addFragment(TempFragment(), "sports")
+        adapter.addFragment(TempFragment(), "kids")
+        adapter.addFragment(TempFragment(), "games")
+        adapter.addFragment(TempFragment(), "quiz")
+        adapter.addFragment(TempFragment(), "watchopedia")
 
         // Adding the Adapter to the ViewPager
         binding.viewPager.adapter = adapter
 
         // bind the viewPager with the TabLayout.
         binding.tabs.setupWithViewPager( binding.viewPager)
+
+
+
+
         return binding.root
     }
 }
