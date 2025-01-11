@@ -33,9 +33,10 @@
         app:layout_constraintStart_toEndOf="@+id/ivDot"
         android:text="Trending"
         android:textStyle="bold"
-        android:textSize="@dimen/_10ssp"
+        android:textSize="@dimen/_8ssp"
         android:paddingBottom="0dp"
 
+        android:fontFamily="@font/montserrat_regular"
         android:textColor="@color/white"/>
 
     <ImageView

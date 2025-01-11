@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -42,9 +43,19 @@ class MoviesAdapter(mContext: Context, mParents: List<Movies>,layout:Int) :
 
     private fun multiViewHolder(parent: ViewGroup, viewType: Int=0): RecyclerView.ViewHolder? {
          when (viewType) {
+            R.layout.item_aa -> {
+                val contactView: View = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_aa, parent, false)
+                return ViewHolder(contactView)
+            }
             R.layout.item_a -> {
                 val contactView: View = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.item_a, parent, false)
+                return ViewHolder(contactView)
+            }
+            R.layout.item_m -> {
+                val contactView: View = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_m, parent, false)
                 return ViewHolder(contactView)
             }
             R.layout.item_b -> {
@@ -123,7 +134,7 @@ class MoviesAdapter(mContext: Context, mParents: List<Movies>,layout:Int) :
         var url:String? =null
         viewHolder?.setIsRecyclable(false)
 
-        if (viewHolder?.ivImage != null) {
+        if (viewHolder?.ivImage != null && layoutId!=R.layout.item_d) {
 
 
             if(model.Poster.contains("http://")){
@@ -149,6 +160,52 @@ class MoviesAdapter(mContext: Context, mParents: List<Movies>,layout:Int) :
 
         }
 
+        when (layoutId) {
+            R.layout.item_d -> {
+
+                viewHolder?.tvTitle?.isVisible = true
+                viewHolder?.tvTitle?.text = "Hindi"
+            }
+            R.layout.item_m -> {
+
+             //   viewHolder?.tvTitle?.isVisible = false
+            }
+           /* R.layout.item_a -> {
+
+            }*/
+            R.layout.item_b -> {
+
+                viewHolder?.tvTitle?.text = model.Title
+            }
+            R.layout.item_e -> {
+                viewHolder?.tvTitle?.isVisible = false
+                viewHolder?.tvGenre?.isVisible = false
+            }
+           /* R.layout.item_c -> {
+
+            }
+            R.layout.item_d -> {
+
+            }
+            R.layout.item_e -> {
+
+            }
+            R.layout.item_f -> {
+
+            }*/
+            else ->{
+                viewHolder?.tvTitle?.isVisible = true
+                viewHolder?.tvGenre?.isVisible = true
+                viewHolder?.tvTitle?.text = model.Title
+                viewHolder?.tvGenre?.text = model.Genre +" "+
+                        context.getString(R.string.seperator) +" "+
+                        model.Runtime +" "+ context.getString(R.string.seperator)+" "+
+                        model.Year
+
+            }
+
+        }
+
 
     } //end of method bindMultiViews....
 
@@ -157,15 +214,19 @@ class MoviesAdapter(mContext: Context, mParents: List<Movies>,layout:Int) :
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         lateinit var  ivImage: ImageView
         lateinit var tvTitle: TextView
+        lateinit var tvGenre: TextView
 
         init {
                 var imageId=R.id.ivImage
                 var titleId=R.id.tvTitle
+                var tvGenreId=R.id.tvGenre
             try {
                 if (imageId !=null)
                     ivImage = itemView.findViewById(R.id.ivImage)
                 if (titleId !=null)
                     tvTitle = itemView.findViewById(R.id.tvTitle)
+                if (tvGenreId !=null)
+                    tvGenre = itemView.findViewById(R.id.tvGenre)
             } catch (e: Exception) {
             }
         }

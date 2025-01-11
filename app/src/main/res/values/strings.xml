@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Movies Application</string>
+    <string name="app_name">Watcho Movies</string>
+    <string name="seperator"> | </string>
 </resources>

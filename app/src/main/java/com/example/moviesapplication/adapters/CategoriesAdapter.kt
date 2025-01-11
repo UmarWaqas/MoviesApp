@@ -108,7 +108,7 @@ class CategoriesAdapter(mContext:Context, dataList:List<MovieCategory>) :
                     if (holder is ItemHomeSliderView) {
                         val category: MovieCategory = mParents.get(position)
                         viewHolderItemSlider = holder
-                        adapter = ViewsSliderAdapter(category.movieList.subList(0,4))
+                        adapter = ViewsSliderAdapter(category.movieList.subList(0,6))
 
 
                         holder.binding.viewPager2.adapter = adapter
@@ -141,7 +141,7 @@ class CategoriesAdapter(mContext:Context, dataList:List<MovieCategory>) :
                         viewHolder!!.rvMovies.adapter = mAdapter
                         viewHolder.rvMovies.setHasFixedSize(true)
                         if (id==R.layout.item_f)
-                            viewHolder.rvMovies.layoutManager = grid
+                            viewHolder.rvMovies.layoutManager = linearLayoutManager//grid
                         else
                             viewHolder.rvMovies.layoutManager = linearLayoutManager
                         viewHolder.rvMovies.isNestedScrollingEnabled = false

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.moviesapplication.R
 import com.example.moviesapplication.databinding.FragmentCodeBinding
 import com.example.moviesapplication.views.activities.MainActivity.ViewPagerAdapter
 
@@ -21,11 +22,11 @@ class HomeFragment : Fragment() {
 
         // add fragment to the list
         adapter.addFragment(ContentFragment(), "Home")
-        adapter.addFragment(TempFragment(), "Series")
-        adapter.addFragment(ContentFragment(), "Movies")
-        adapter.addFragment(TempFragment(), "bhakti")
-        adapter.addFragment(TempFragment(), "sports")
-        adapter.addFragment(TempFragment(), "kids")
+        adapter.addFragment(SeriesFragment(R.layout.item_a), "Series")
+        adapter.addFragment(MoviesFragment(R.layout.item_f), "Movies")
+        adapter.addFragment(BhaktiFragment(R.layout.item_aa), "bhakti")
+        adapter.addFragment(SportsFragment(R.layout.item_aa), "sports")
+        adapter.addFragment(MoviesFragment(R.layout.item_f), "kids")
         adapter.addFragment(TempFragment(), "games")
         adapter.addFragment(TempFragment(), "quiz")
         adapter.addFragment(TempFragment(), "watchopedia")

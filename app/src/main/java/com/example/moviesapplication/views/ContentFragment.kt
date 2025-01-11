@@ -73,38 +73,95 @@ class ContentFragment : Fragment() {
                 var category = MovieCategory(1,"slider",movies.shuffled(), layoutId)
                 dataList.add(category)
 
-                layoutId=R.layout.item_a
-                category = MovieCategory(1,"Trending Shows",movies.shuffled(), layoutId)
-                dataList.add(category)
-
                 layoutId=R.layout.item_b
                 category = MovieCategory(1,"Browse by  OTT App",movies.shuffled(), layoutId)
                 dataList.add(category)
 
+                layoutId=R.layout.item_a
+                category = MovieCategory(1,"New Releases",movies.shuffled(), layoutId)
+                dataList.add(category)
 
-                layoutId=R.layout.item_b
+                layoutId=R.layout.item_a
+                category = MovieCategory(1,"24 In Entertainment",movies.shuffled(), layoutId)
+                dataList.add(category)
+
+                layoutId=R.layout.item_a
+                category = MovieCategory(1,"OTT Wrap Of the Year",movies.shuffled(), layoutId)
+                dataList.add(category)
+
+                layoutId=R.layout.item_a
+                category = MovieCategory(1,"Trending Shows",movies.shuffled(), layoutId)
+                dataList.add(category)
+
+
+                layoutId=R.layout.item_d
                 category = MovieCategory(1,"Browse Language",movies.shuffled(), layoutId)
                 dataList.add(category)
 
-                layoutId=R.layout.item_c
+                layoutId=R.layout.item_a
                 category = MovieCategory(1,"Best TV Shows Packed For You",movies.shuffled(), layoutId)
                 dataList.add(category)
 
-                layoutId=R.layout.item_d
+                layoutId=R.layout.item_m
                 category = MovieCategory(1,"Browse Genre",movies.shuffled(), layoutId)
                 dataList.add(category)
 
-                layoutId=R.layout.item_e
-                category = MovieCategory(1,"Watcho Originals",moviesData.movies.shuffled(), layoutId)
+                layoutId=R.layout.item_a
+                category = MovieCategory(1,"Watcho Originals",movies.shuffled(), layoutId)
                 dataList.add(category)
 
-                layoutId=R.layout.item_f
-                category = MovieCategory(1,"Live Matches:Happening Now Again",moviesData.movies.shuffled(), layoutId)
+                layoutId=R.layout.item_a
+                category = MovieCategory(1,"Live Matches:Happening Now Again",movies.shuffled(), layoutId)
+                dataList.add(category)
+
+                layoutId=R.layout.item_b
+                category = MovieCategory(1,"Free Live Channels",movies.shuffled(), layoutId)
+                dataList.add(category)
+
+                layoutId=R.layout.item_a
+                category = MovieCategory(1,"Reality TV Shows",movies.shuffled(), layoutId)
+                dataList.add(category)
+
+                layoutId=R.layout.item_a
+                category = MovieCategory(1,"Most Rated Indian Series",movies.shuffled(), layoutId)
                 dataList.add(category)
 
                 layoutId=R.layout.item_c
-                category = MovieCategory(1,"Free Live Channels",moviesData.movies, layoutId)
+                category = MovieCategory(1,"Bollywood Blockbusters",movies.shuffled(), layoutId)
                 dataList.add(category)
+
+                layoutId=R.layout.item_e
+                category = MovieCategory(1,"Favorite Celebrities",movies.shuffled(), layoutId)
+                dataList.add(category)
+
+                layoutId=R.layout.item_f
+                category = MovieCategory(1,"Must Watch Movies",movies.shuffled(), layoutId)
+                dataList.add(category)
+
+                layoutId=R.layout.item_f
+                category = MovieCategory(1,"Based on True Stories",movies.shuffled(), layoutId)
+                dataList.add(category)
+
+                layoutId=R.layout.item_a
+                category = MovieCategory(1,"Watch list creted for You",movies.shuffled(), layoutId)
+                dataList.add(category)
+
+                layoutId=R.layout.item_f
+                category = MovieCategory(1,"Family Time Favorite",movies.shuffled(), layoutId)
+                dataList.add(category)
+
+                layoutId=R.layout.item_f
+                category = MovieCategory(1,"Kids Special",movies.shuffled(), layoutId)
+                dataList.add(category)
+
+                layoutId=R.layout.item_e
+                category = MovieCategory(1,"Crazy Toons",movies.shuffled(), layoutId)
+                dataList.add(category)
+
+                layoutId=R.layout.item_a
+                category = MovieCategory(1,"Kids Shows",movies.shuffled(), layoutId)
+                dataList.add(category)
+
                   binding.rvCategories.layoutManager =LinearLayoutManager(requireActivity())
                 val adapter = CategoriesAdapter(requireActivity(),dataList)
                   binding.rvCategories.adapter = adapter
