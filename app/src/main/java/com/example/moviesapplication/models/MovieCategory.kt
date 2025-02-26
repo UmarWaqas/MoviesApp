@@ -11,6 +11,7 @@ class MovieCategory (
     var id : Int,
     val name : String,
     var movieList :List<Movies>,
-    var laoutId:Int
+    var laoutId:Int,
+    var hideDetails: Boolean = false
 
     ): Parcelable

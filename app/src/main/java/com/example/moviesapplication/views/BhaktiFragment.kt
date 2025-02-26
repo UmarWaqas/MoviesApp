@@ -74,11 +74,11 @@ class BhaktiFragment(val layoutId:Int=R.layout.item_a) : Fragment() {
                 dataList.add(category)
 
              //   layoutId=R.layout.item_b
-                category = MovieCategory(1,"More Live Darshan",movies.shuffled(), layoutId)
+                category = MovieCategory(1,"More Live Darshan",movies.shuffled(), layoutId,true)
                 dataList.add(category)
 
                // layoutId=R.layout.item_a
-                category = MovieCategory(1,"Bhajan & Satang",movies.shuffled(), layoutId)
+                category = MovieCategory(1,"Bhajan & Satang",movies.shuffled(), layoutId,true)
                 dataList.add(category)
 
 

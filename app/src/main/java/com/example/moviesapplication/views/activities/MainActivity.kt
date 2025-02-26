@@ -1,15 +1,13 @@
 package com.example.moviesapplication.views.activities
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.Observer;
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -105,16 +103,16 @@ class MainActivity : AppCompatActivity() {
         }
     }//end of method initMoviesData....
 
-    fun getMoviesData():MoviesResponse?{
+    fun getMoviesData(): MoviesResponse? {
 
         return moviesData
     }
 
     private fun fetchOfflineData() {
 
-        val observer: Observer<MoviesResponse> = Observer { response ->
+        val observer: androidx.lifecycle.Observer<MoviesResponse> = Observer { response ->
             response?.let { data ->
-                //   initMoviesData(data)
+                // initMoviesData(data)
                 moviesData = data
             }
             DialogUtils.HideDialog()
@@ -122,13 +120,6 @@ class MainActivity : AppCompatActivity() {
         dashboardVM.offlineMoviesResponse.observe(this@MainActivity, observer)
         dashboardVM.getOfflineMovies(OfflineMoviesRequest("offline", this@MainActivity))
 
-        //  DialogUtils.ShowProgress(this,"Loading Movies....")
-        /* Handler(Looper.getMainLooper())
-             .postDelayed({
-                 // DialogUtils.HideDialog()
-                 dashboardVM.offlineMoviesResponse.observe(this@MainActivity, observer)
-                 dashboardVM.getOfflineMovies(OfflineMoviesRequest("offline",this@MainActivity))
-             }, 2000)*/
 
     }//end of method fetchOfflineData....
 

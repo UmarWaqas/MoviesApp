@@ -6,8 +6,8 @@
     android:layout_marginRight="8dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="120dp"
-        android:layout_height="160dp"
+        android:layout_width="110dp"
+        android:layout_height="150dp"
         app:cardCornerRadius="@dimen/_5sdp"
         app:cardBackgroundColor="@android:color/transparent"
         android:paddingBottom="0dp"

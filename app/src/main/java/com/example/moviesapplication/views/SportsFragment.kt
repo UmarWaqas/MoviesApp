@@ -73,20 +73,25 @@ class SportsFragment(val layoutId:Int=R.layout.item_a) : Fragment() {
                 var category = MovieCategory(1,"slider",movies.shuffled(), layoutId)
                 dataList.add(category)
 
-             //   layoutId=R.layout.item_b
-                category = MovieCategory(1,"Live Matches : Happening Now",movies.shuffled(), layoutId)
+                category = MovieCategory(1,"Live Matches : Happening Now",movies.shuffled(), layoutId,true)
                 dataList.add(category)
 
-               // layoutId=R.layout.item_a
-                category = MovieCategory(1,"Popular Sports",movies.shuffled(), layoutId)
+                // layoutId=R.layout.item_a
+                category = MovieCategory(1,"Popular Sports",movies.shuffled(), layoutId,true)
                 dataList.add(category)
 
 
-              //  layoutId=R.layout.item_d
+                //  layoutId=R.layout.item_d
                 category = MovieCategory(1,"ICC T20 Men's WC 2024",movies.shuffled(), layoutId)
                 dataList.add(category)
+
+
                 category = MovieCategory(1,"Trending Sports",movies.shuffled(), layoutId)
                 dataList.add(category)
+
+                category = MovieCategory(1,"Sports Categories",movies.shuffled(), R.layout.item_sports_category)
+                dataList.add(category)
+
                 category = MovieCategory(1,"Sony Live Cricket Series",movies.shuffled(), layoutId)
                 dataList.add(category)
                 category = MovieCategory(1,"Ultimate Sports Collection",movies.shuffled(), layoutId)

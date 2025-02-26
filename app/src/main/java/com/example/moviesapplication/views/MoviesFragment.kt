@@ -90,6 +90,12 @@ class MoviesFragment(val layoutId:Int) : Fragment() {
                 category = MovieCategory(1,"Recommended Movies - New",movies.shuffled(), layoutId)
                 dataList.add(category)
 
+                category = MovieCategory(1,"Browse Language",movies.shuffled(), R.layout.item_d)
+                dataList.add(category)
+
+                category = MovieCategory(1,"Movies by Genre",movies.shuffled(), R.layout.item_m)
+                dataList.add(category)
+
                 category = MovieCategory(1,"Top Trending Movies",movies.shuffled(), layoutId)
                 dataList.add(category)
 

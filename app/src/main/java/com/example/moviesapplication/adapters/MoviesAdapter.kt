@@ -33,19 +33,43 @@ import java.util.*
 /**
  * Created by Umar on 21-Feb-22.
  */
-class MoviesAdapter(mContext: Context, mParents: List<Movies>,layout:Int) :
+class MoviesAdapter(mContext: Context, mParents: List<Movies>,layout:Int, hideDetails: Boolean = false) :
     RecyclerView.Adapter<RecyclerView.ViewHolder?>() {
 
     private var mParents: List<Movies>
 
     private val context: Context
     private val layoutId: Int
+    private var isHiddenDetails=false
+
+    init {
+        this.mParents = mParents
+        context = mContext
+        layoutId=layout
+        isHiddenDetails = hideDetails
+
+    }
 
     private fun multiViewHolder(parent: ViewGroup, viewType: Int=0): RecyclerView.ViewHolder? {
          when (viewType) {
             R.layout.item_aa -> {
                 val contactView: View = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.item_aa, parent, false)
+                return ViewHolder(contactView)
+            }
+            R.layout.item_sports_category -> {
+                val contactView: View = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_sports_category, parent, false)
+                return ViewHolder(contactView)
+            }
+            R.layout.item_games_category -> {
+                val contactView: View = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_games_category, parent, false)
+                return ViewHolder(contactView)
+            }
+            R.layout.item_games -> {
+                val contactView: View = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_games, parent, false)
                 return ViewHolder(contactView)
             }
             R.layout.item_a -> {
@@ -166,6 +190,16 @@ class MoviesAdapter(mContext: Context, mParents: List<Movies>,layout:Int) :
                 viewHolder?.tvTitle?.isVisible = true
                 viewHolder?.tvTitle?.text = "Hindi"
             }
+            R.layout.item_games_category -> {
+
+                viewHolder?.tvTitle?.isVisible = true
+                viewHolder?.tvTitle?.text = "Action"
+            }
+            R.layout.item_games -> {
+
+                viewHolder?.tvTitle?.isVisible = true
+                viewHolder?.tvTitle?.text = model.Title.substringBefore(" ")
+            }
             R.layout.item_m -> {
 
              //   viewHolder?.tvTitle?.isVisible = false
@@ -195,7 +229,7 @@ class MoviesAdapter(mContext: Context, mParents: List<Movies>,layout:Int) :
             }*/
             else ->{
                 viewHolder?.tvTitle?.isVisible = true
-                viewHolder?.tvGenre?.isVisible = true
+                viewHolder?.tvGenre?.isVisible = !isHiddenDetails
                 viewHolder?.tvTitle?.text = model.Title
                 viewHolder?.tvGenre?.text = model.Genre +" "+
                         context.getString(R.string.seperator) +" "+
@@ -232,10 +266,5 @@ class MoviesAdapter(mContext: Context, mParents: List<Movies>,layout:Int) :
         }
     }
 
-    init {
-        this.mParents = mParents
-        context = mContext
-        layoutId=layout
 
-    }
 } //end of class FixturesInnerAdapter....

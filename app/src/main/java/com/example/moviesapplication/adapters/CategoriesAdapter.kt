@@ -1,7 +1,5 @@
 package com.example.moviesapplication.adapters
-/*import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;*/
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -27,12 +25,11 @@ class CategoriesAdapter(mContext:Context, dataList:List<MovieCategory>) :
 
     private  var mParents: List<MovieCategory>
 
-    private var context: Context
+    private var context: Context = mContext
 
     lateinit var adapter : ViewsSliderAdapter
     private lateinit var viewHolderItemSlider : ItemHomeSliderView
    init {
-       context=mContext
        mParents=dataList
    }
     inner class ItemHomeSliderView(itemView: ItemHomeViewpagerBinding) :
@@ -136,7 +133,7 @@ class CategoriesAdapter(mContext:Context, dataList:List<MovieCategory>) :
                         val mAdapter =
                             MoviesAdapter(
                                 context,
-                                category.movieList.subList(0,10),id
+                                category.movieList.subList(0,10),id,category.hideDetails
                             )
                         viewHolder!!.rvMovies.adapter = mAdapter
                         viewHolder.rvMovies.setHasFixedSize(true)
@@ -162,8 +159,6 @@ class CategoriesAdapter(mContext:Context, dataList:List<MovieCategory>) :
         var tvCategoryTitle:TextView
 
         init {
-
-
             rvMovies = itemView.findViewById(R.id.rvMovies)
             tvCategoryTitle = itemView.findViewById(R.id.tvCategoryTitle)
         }

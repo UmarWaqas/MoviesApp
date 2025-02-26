@@ -44,7 +44,7 @@
         android:textColor="@color/white_60"
         android:textStyle="bold"
         android:fontFamily="@font/montserrat_regular"
-        android:textSize="@dimen/_5ssp"
+        android:textSize="@dimen/_6ssp"
         android:id="@+id/tvTitle"
         app:layout_constraintTop_toBottomOf="@+id/imageParent"
         app:layout_constraintStart_toStartOf="parent"
